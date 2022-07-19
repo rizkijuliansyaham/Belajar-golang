@@ -9,19 +9,26 @@ import (
 func main() {
 	router := gin.Default()
 
-	router.GET("/", func(ctx *gin.Context) {
-		ctx.JSON(http.StatusOK, gin.H{
-			"name": "Rizki Juliansyah",
-			"bio":  "Belajar Golang dari youtube",
-		})
-	})
-	router.GET("/Hello", func(ctx *gin.Context) {
-		ctx.JSON(http.StatusOK, gin.H{
-			"content":    "Test path",
-			"Keterangan": "Belajar Golang dari youtube tes path",
-		})
-	})
+	router.GET("/", rootHandler)
+
+	router.GET("/Hello", helloHandler)
 
 	// router.Run()
 	router.Run(":5655") // perubahan port
+}
+
+func rootHandler(ctx *gin.Context) {
+	ctx.JSON(http.StatusOK, gin.H{
+		"name": "Rizki Juliansyah",
+		"bio":  "Belajar Golang dari youtube",
+	})
+
+}
+
+func helloHandler(ctx *gin.Context) {
+	ctx.JSON(http.StatusOK, gin.H{
+		"content":    "Test path",
+		"Keterangan": "Belajar Golang dari youtube tes path",
+	})
+
 }
