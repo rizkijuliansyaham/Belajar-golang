@@ -15,8 +15,17 @@ func main() {
 
 	router.GET("/books/:id", urlParamHandler)
 
+	router.GET("/query", urlQueryHandler)
+
 	router.Run()
 	// router.Run(":5655") // perubahan port
+}
+func urlQueryHandler(ctx *gin.Context) {
+	title := ctx.Query("title")
+
+	ctx.JSON(http.StatusOK, gin.H{
+		"title": title,
+	})
 }
 
 func urlParamHandler(ctx *gin.Context) {
