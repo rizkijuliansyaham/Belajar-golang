@@ -13,8 +13,18 @@ func main() {
 
 	router.GET("/Hello", helloHandler)
 
-	// router.Run()
-	router.Run(":5655") // perubahan port
+	router.GET("/books/:id", urlParamHandler)
+
+	router.Run()
+	// router.Run(":5655") // perubahan port
+}
+
+func urlParamHandler(ctx *gin.Context) {
+	id := ctx.Param("id")
+
+	ctx.JSON(http.StatusOK, gin.H{
+		"id": id,
+	})
 }
 
 func rootHandler(ctx *gin.Context) {

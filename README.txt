@@ -6,3 +6,16 @@
 
     how to check
     localhost:8080
+
+
+
+
+
+
+Materi URL Parameter
+/buku/1
+/buku/judul-buku
+dll
+
+ex :
+    router.GET
