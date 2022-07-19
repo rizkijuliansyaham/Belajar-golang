@@ -15,6 +15,12 @@ func main() {
 			"bio":  "Belajar Golang dari youtube",
 		})
 	})
+	router.GET("/Hello", func(ctx *gin.Context) {
+		ctx.JSON(http.StatusOK, gin.H{
+			"content":    "Test path",
+			"Keterangan": "Belajar Golang dari youtube tes path",
+		})
+	})
 
 	router.Run()
 }
