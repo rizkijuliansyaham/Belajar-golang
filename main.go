@@ -22,5 +22,6 @@ func main() {
 		})
 	})
 
-	router.Run()
+	// router.Run()
+	router.Run(":5655") // perubahan port
 }
