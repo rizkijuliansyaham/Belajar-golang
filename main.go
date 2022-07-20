@@ -22,8 +22,9 @@ func main() {
 }
 
 type BookInput struct {
-	Title string
-	Price int
+	Title    string
+	Price    int
+	SubTitle string `json:"sub_title"`
 }
 
 func postBookHandler(ctx *gin.Context) {
@@ -35,8 +36,9 @@ func postBookHandler(ctx *gin.Context) {
 	}
 
 	ctx.JSON(http.StatusOK, gin.H{
-		"title": bookInput.Title,
-		"price": bookInput.Price,
+		"title":     bookInput.Title,
+		"price":     bookInput.Price,
+		"sub_title": bookInput.SubTitle,
 	})
 
 }
