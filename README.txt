@@ -31,3 +31,10 @@ sample :
     "title":"Satu Aja Susah",
     "price": 1000
     }
+
+
+
+validator
+ada banyak jenisnya 
+ada di link
+github.com/go-playground/validator
