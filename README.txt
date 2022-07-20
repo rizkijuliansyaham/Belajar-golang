@@ -19,3 +19,15 @@ dll
 
 ex :
     router.GET
+
+
+
+
+
+
+POST
+sample :
+    {
+    "title":"Satu Aja Susah",
+    "price": 1000
+    }
